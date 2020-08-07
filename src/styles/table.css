@@ -1,0 +1,58 @@
+.data-table {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--clr-stroke);
+}
+
+.data-table table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.data-table table th,
+.data-table table td {
+  border: 1px solid var(--clr-stroke);
+  padding: 12px
+}
+
+.data-table table th {
+  border-top: 0;
+}
+
+.data-table table tr:last-child td {
+  border-bottom: 0;
+}
+
+.data-table table th:first-child,
+.data-table table td:first-child {
+  border-left: 0;
+}
+
+.data-table table th:last-child,
+.data-table table td:last-child {
+  border-right: 0;
+}
+
+.data-table table td .actions {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.data-table table td .actions > * {
+  margin-right: 12px;
+}
+
+.data-table table td .actions > *:last-child {
+  margin-right: 0;
+}
+
+.data-table .no-data {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0;
+}

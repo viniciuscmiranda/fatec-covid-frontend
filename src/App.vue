@@ -1,28 +1,40 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="loader-container" v-if="loading">
+      <div>
+        <div class="loader" />
+        <span v-html="loadingMessage" />
+      </div>
+    </div>
+
+    <router-view/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  data: () => ({
+    loading: false,
+    loadingMessage: '',
+  }),
+  created(){
+    window.addEventListener("set-loading", this.setLoading);
+  },
+  destroyed(){
+    window.removeEventListener("set-loading", this.setLoading);
+  },
+  methods: {
+    setLoading({ detail }) {
+      this.loading = detail.loading;
+      this.loadingMessage = detail.message || 'Carregando...';
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import './styles/base.css';
+@import './styles/loader.css';
+@import './styles/table.css';
+@import './styles/classes.css';
 </style>

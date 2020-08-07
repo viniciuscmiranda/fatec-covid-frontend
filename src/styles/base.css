@@ -1,0 +1,31 @@
+:root {
+  --clr-text: #000;
+  --clr-text-light: #fff;
+  --clr-text-secondary: #999;
+  --clr-background: #fff;
+  --clr-background-opacity: rgba(255, 255, 255 .95);
+  --clr-stroke: #ccc;
+
+  --clr-primary: rgb(111, 116, 192);
+  --clr-primary-dark: rgb(80, 82, 119);
+  
+  --clr-error: rgb(192, 111, 111);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--clr-text);
+}
+
+body {
+  background: var(--clr-background);
+}
+
+main > .content {
+  padding: 16px;
+}
